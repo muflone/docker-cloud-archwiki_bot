@@ -3,6 +3,14 @@ services:
     container_name: archwiki_bot
     image: ilmuflone/archwiki_bot:0.1.1
     restart: unless-stopped
+    networks:
+      - default
     env_file:
       - ./app.env
+
+networks:
+  default:
+    name: archwiki_bot
+    driver: bridge
+    enable_ipv6: false
 
